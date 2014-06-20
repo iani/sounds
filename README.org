@@ -1,4 +1,4 @@
-This is a selection of LinnDrum samples, plus 3 ambiant sounds
+This is a selection of LinnDrum samples, plus 3 ambient sounds
 recorded by Andrea Cohen in Syros in July 2013.
 
 For LinnDrum samples see:
@@ -18,5 +18,28 @@ To auto-load these sounds in SuperCollider when booting the server, using the =t
 : BufferList.loadFolder;
 
 This will load the audio files found in the =sounds= folder every time that the default Server boots.  You must repeat the =BufferList.loadFolder;= line each time that you recompile or restart SuperCollider.  You may want to put this line in your startup.scd file.  (See Help page "Sclang Startup File").
+
+Test playing the samples with tiny-sc through this code:
+
+#+BEGIN_EXAMPLE
+`\boat +> \sampletest;  // play one sound
+`\bell +> \sampletest;  // substitute a different sound in the same player
+`\conga +> \sampletest; // substitute a third sound.  No looping!
+`\tom ++> \sampletest; // looping
+`\ride +> \sampletest; // no looping
+#+END_EXAMPLE
+
+
+Open a fader interface for controlling the =sampletest= player:
+
+#+BEGIN_EXAMPLE
+SynthTree.faders;
+#+END_EXAMPLE
+
+Open a knob interface for controlling further parameters of the =sampletest= player:
+
+#+BEGIN_EXAMPLE
+\sampletest.knobs;
+#+END_EXAMPLE
 
 IZ Fri, Jun 20 2014, 16:21 EEST
