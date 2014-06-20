@@ -1,0 +1,22 @@
+This is a selection of LinnDrum samples, plus 3 ambiant sounds
+recorded by Andrea Cohen in Syros in July 2013.
+
+For LinnDrum samples see:
+
+http://ultimatefreesamples.com/?p=417
+http://trashaudio.com/2012/10/linndrum-lm2-samples/
+http://en.wikipedia.org/wiki/LinnDrum
+
+To auto-load these sounds in SuperCollider when booting the server, using the =tiny-sc= library, do the following:
+
+1. Download =tiny-sc= from https://github.com/iani/tiny-sc
+2. Put the =tiny-sc= folder, or an alias of that folder, in the Extensions directory of your SuperCollider User Support Directory.  The user directory can be opened through menu "File", item "Open user support directory".  You should create a directory named "Extensions" inside this directory, if it does not already exist.
+3. Put the folder downloaded from the present repository =sounds= inside the user support directory of SuperCollider explained above.
+4. Recompile SuperCollider library
+5. Run this line of code:
+
+: BufferList.loadFolder;
+
+This will load the audio files found in the =sounds= folder every time that the default Server boots.  You must repeat the =BufferList.loadFolder;= line each time that you recompile or restart SuperCollider.  You may want to put this line in your startup.scd file.  (See Help page "Sclang Startup File").
+
+IZ Fri, Jun 20 2014, 16:21 EEST
